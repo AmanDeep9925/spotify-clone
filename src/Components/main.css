@@ -1,6 +1,67 @@
-.main{
-    flex:0.8;
-    border:2px solid green;
-    height : 100vh;
-    background:linear-gradient(rgb(52, 49, 70),rgba(0,0,0,1))
+.main {
+    padding: 30px;
+    width: 100%;
+    height: 100vh;
+    overflow-y: overlay;
+    flex: 0.8;
+    color: white;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 1));
+    background-color: rgb(91, 87, 115);
+}
+
+.main::-webkit-scrollbar {
+    display: none;
+}
+
+.main-info {
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+}
+
+.main-info > img {
+    height: 20vh;
+    margin: 0 20px;
+    box-shadow: 10px 5px 60px 10px rgba(80, 80, 80, 0.5);
+}
+
+.main-info-text {
+    flex: 1;
+}
+
+.main-info-text > h3 {
+    text-transform: capitalize;
+}
+.main-info-text > h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.main-info-text > p {
+    font-size: 20px;
+}
+
+.main-songs {
+    margin: 20px -30px;
+}
+
+.main-icons {
+    display: flex;
+    align-items: center;
+}
+
+.main-icons > .MuiSvgIcon-root {
+    margin-right: 20px;
+}
+
+.main-shuffle {
+    cursor: pointer;
+    font-size: 80px !important;
+    margin: 10px 0 10px 50px;
+}
+
+.main-shuffle:hover {
+    transition: 100ms transform ease-in-out;
+    transform: scale(1.08);
+    color: #1db954;
 }

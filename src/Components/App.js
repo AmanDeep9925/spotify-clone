@@ -41,9 +41,16 @@ function App() {
                 {
                     dispatch({
                         type: 'SET_PLAYLISTS',
-                        playlists : playlists
+                        playlists: playlists,
                     });
                 }
+            });
+
+            spotify.getPlaylist('2PX2bq5UYzOBggTlDkbseo').then((res) => {
+                dispatch({
+                    type: 'SET_MAIN_PLAYLIST',
+                    mainplaylist: res,
+                });
             });
         }
     }, [token, dispatch]);
