@@ -9,7 +9,6 @@ import { useDataLayerValue } from '../DataLayer';
 
 function Main({ spotify }) {
     const [{ mainplaylist }, dispatch] = useDataLayerValue();
-    console.log(mainplaylist);
     return (
         <div className="main">
             <Header spotify={spotify} />
@@ -23,12 +22,15 @@ function Main({ spotify }) {
             </div>
             <div className="main-songs">
                 <div className="main-icons">
-                    <PlayCircleFilledIcon className="main-shuffle" />
+                    <PlayCircleFilledIcon
+                        className="main-shuffle"
+                        
+                    />
                     <FavoriteIcon fontSize="large" />
                     <MoreHorizIcon />
                 </div>
                 {mainplaylist?.tracks.items.map((item) => (
-                    <Songrow track={item.track} />
+                    <Songrow  track={item.track} />
                 ))}
             </div>
         </div>
