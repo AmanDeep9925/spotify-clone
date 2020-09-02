@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Login from './Login';
 import Player from './Player';
 import './App.css';
@@ -34,10 +34,25 @@ function App() {
                     user: user,
                 });
             });
+
+            // getting the user playlist
+
+            spotify.getUserPlaylists().then((playlists) => {
+                {
+                    dispatch({
+                        type: 'SET_PLAYLISTS',
+                        playlists : playlists
+                    });
+                }
+            });
         }
     }, [token, dispatch]);
 
-    return <div className="app">{token ? <Player spotify = {spotify} /> : <Login />}</div>;
+    return (
+        <div className="app">
+            {token ? <Player spotify={spotify} /> : <Login />}
+        </div>
+    );
 }
 
 export default App;
